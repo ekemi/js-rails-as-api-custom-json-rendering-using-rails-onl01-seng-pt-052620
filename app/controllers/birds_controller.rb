@@ -7,6 +7,6 @@ class BirdsController < ApplicationController
   def show
 
     bird = Bird.find_by(id: params[:id])
-    render json: {id:, name:,species:}
+    render json: bird.slice(id:, name:,species:)
   end
 end
